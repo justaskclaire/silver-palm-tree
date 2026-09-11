@@ -375,7 +375,6 @@ footer button:hover{color:#fff;border-color:#fff}
         <div>
           <label class="fl" for="bk-notes">Notes (Optional)</label>
           <textarea id="bk-notes" maxlength="400" placeholder="Where to meet, what to bring, who else is coming…"></textarea>
-          <p class="card-note" style="margin-top:.4rem;margin-bottom:0">This is a public link — skip confirmation numbers and anything you'd rather a stranger not read.</p>
         </div>
       </div>
       <div class="actions">
@@ -500,10 +499,6 @@ footer button:hover{color:#fff;border-color:#fff}
   <h2>Everything Else</h2>
   <div class="block" style="margin-top:1.3rem">
     <dl class="facts">
-      <div class="fact">
-        <dt>Cabin Numbers</dt>
-        <dd>Not on this page on purpose — it's a public link. Claire texted them to everyone; check that thread.</dd>
-      </div>
       <div class="fact">
         <dt>What to Pack</dt>
         <dd>All casual now — shorts and a t-shirt get you into any dining room on the ship, specialty restaurants included.</dd>
@@ -648,6 +643,17 @@ footer button:hover{color:#fff;border-color:#fff}
   function labelOf(list,v){
     if(!v) return null;
     for(var i=0;i<list.length;i++) if(list[i].v===v) return list[i].l;
+    return v;
+  }
+  /* A vote may come back as a full timestamp if Sheets coerced "Dec 31"
+     into a date before the backend was fixed. Show it the short way. */
+  function vote(v){
+    if(!v) return null;
+    v = String(v);
+    if(v.length > 14){
+      var d = new Date(v);
+      if(!isNaN(d.getTime())) return d.toLocaleDateString("en-US",{month:"short",day:"numeric"});
+    }
     return v;
   }
   function picks(id){
@@ -806,7 +812,7 @@ footer button:hover{color:#fff;border-color:#fff}
     var p = me ? picks(me) : {pillow:null, drinks:[], nama:null};
     optGroup("opt-pillow","pillow",PILLOWS,p.pillow,false);
     optGroup("opt-drinks","drinks",DRINKS,p.drinks,true);
-    optGroup("opt-nama","nama",NAMA_OPTS,p.nama,false);
+    optGroup("opt-nama","nama",NAMA_OPTS,vote(p.nama),false);
     updateDrinkCap();
 
     document.getElementById("youH2").textContent = me ? nameOf(me) + "'s Page" : "Your Page";
@@ -841,7 +847,7 @@ footer button:hover{color:#fff;border-color:#fff}
   function renderNamaTally(){
     var votes = {};
     GUESTS.forEach(function(g){
-      var v = picks(g.id).nama;
+      var v = vote(picks(g.id).nama);
       if(!v) return;
       (votes[v] = votes[v] || []).push(g.name);
     });
@@ -907,7 +913,7 @@ footer button:hover{color:#fff;border-color:#fff}
       return '<tr><td class="nm">'+esc(g.name)+(g.id===me?' <span class="chip chip-done">you</span>':'')+'</td>' +
         '<td>'+cell(labelOf(PILLOWS,p.pillow))+'</td>' +
         '<td>'+cell(drinks)+'</td>' +
-        '<td>'+cell(p.nama)+'</td>' +
+        '<td>'+cell(vote(p.nama))+'</td>' +
         '<td>'+(complete(g.id)?'<span class="chip chip-done">Set</span>':'<span class="chip chip-todo">Waiting</span>')+'</td></tr>';
     }).join("");
   }

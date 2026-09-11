@@ -87,11 +87,33 @@ function rowIndexById(name, id) {
   return -1;
 }
 
+/**
+ * Writes a row with every cell forced to plain text.
+ *
+ * Without this, Sheets "helpfully" converts things like "Dec 31" and
+ * "2:00 pm" into Date objects, and they read back as full timestamps.
+ */
+function writeRow(sh, rowIndex, values) {
+  var range = sh.getRange(rowIndex, 1, 1, values.length);
+  range.setNumberFormats([values.map(function () { return '@'; })]);
+  range.setValues([values]);
+}
+
 function appendRow(name, obj) {
   var sh = sheet(name);
-  sh.appendRow(SHEETS[name].map(function (c) {
+  var values = SHEETS[name].map(function (c) {
     return obj[c] === undefined || obj[c] === null ? '' : obj[c];
-  }));
+  });
+  writeRow(sh, sh.getLastRow() + 1, values);
+}
+
+/** Sheets may hand back a Date where we stored text — put it back. */
+function text(v) {
+  if (v === null || v === undefined || v === '') return '';
+  if (Object.prototype.toString.call(v) === '[object Date]') {
+    return Utilities.formatDate(v, Session.getScriptTimeZone(), 'MMM d');
+  }
+  return String(v);
 }
 
 function deleteById(name, id) {
@@ -109,13 +131,13 @@ function readAll() {
   var picks = {};
   rows('Picks').forEach(function (r) {
     var drinks = [];
-    if (r.drink1) drinks.push(String(r.drink1));
-    if (r.drink2) drinks.push(String(r.drink2));
-    picks[String(r.person)] = {
-      pillow: r.pillow ? String(r.pillow) : null,
+    if (r.drink1) drinks.push(text(r.drink1));
+    if (r.drink2) drinks.push(text(r.drink2));
+    picks[text(r.person)] = {
+      pillow: text(r.pillow) || null,
       drinks: drinks,
-      nama: r.namaVote ? String(r.namaVote) : null,
-      updated: r.updated ? String(r.updated) : null
+      nama: text(r.namaVote) || null,
+      updated: text(r.updated) || null
     };
   });
 
@@ -123,21 +145,21 @@ function readAll() {
     picks: picks,
     bookings: rows('Bookings').map(function (r) {
       return {
-        id: String(r.id), person: String(r.person), day: Number(r.day) || 1,
-        title: String(r.title), time: String(r.time || ''), notes: String(r.notes || '')
+        id: text(r.id), person: text(r.person), day: Number(r.day) || 1,
+        title: text(r.title), time: text(r.time), notes: text(r.notes)
       };
     }),
     requests: rows('Requests').map(function (r) {
       return {
-        id: String(r.id), person: String(r.person), night: String(r.night),
-        changeTo: String(r.changeTo), note: String(r.note || '')
+        id: text(r.id), person: text(r.person), night: text(r.night),
+        changeTo: text(r.changeTo), note: text(r.note)
       };
     }),
     todos: rows('Todos').map(function (r) {
       return {
-        id: String(r.id), task: String(r.task), assignee: String(r.assignee || ''),
-        due: String(r.due || ''), done: r.done === true || String(r.done).toLowerCase() === 'true',
-        addedBy: String(r.addedBy || '')
+        id: text(r.id), task: text(r.task), assignee: text(r.assignee),
+        due: text(r.due), done: r.done === true || text(r.done).toLowerCase() === 'true',
+        addedBy: text(r.addedBy)
       };
     })
   };
@@ -160,8 +182,7 @@ function apply(msg) {
       now()
     ];
     var at = rowIndexById('Picks', msg.person);
-    if (at > 0) sh.getRange(at, 1, 1, row.length).setValues([row]);
-    else sh.appendRow(row);
+    writeRow(sh, at > 0 ? at : sh.getLastRow() + 1, row);
 
   } else if (op === 'addBooking') {
     appendRow('Bookings', {

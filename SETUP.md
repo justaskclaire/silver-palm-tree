@@ -25,7 +25,11 @@ Google will ask for permission the first time:
 - You'll see "Google hasn't verified this app." Click **Advanced** → **Go to Untitled project (unsafe)**
 - Click **Allow**
 
-That warning is expected — it's your own script, and it only touches the spreadsheet it's attached to. When it finishes you'll get a popup saying four tabs are ready. Flip back to the spreadsheet and you'll see **Picks**, **Bookings**, **Requests**, and **Todos**.
+That warning is expected — it's your own script, and it only touches the spreadsheet it's attached to.
+
+It should finish in a second or two, with "Execution completed" in the log. Flip back to the spreadsheet tab and you'll see four new tabs: **Picks**, **Bookings**, **Requests**, and **Todos**.
+
+> If `setUp` seems to hang for minutes and then fails with "Exceeded maximum execution time," you're running an older copy of `Code.gs` that ended with a popup — and Apps Script draws popups on the *spreadsheet* tab, so it waits forever for a click you can't see. Re-copy `Code.gs`, paste it over the old one, and run `setUp` again. Your tabs were probably created anyway on the first attempt; running it twice is harmless.
 
 **5. Deploy it as a web app.**
 Back in the Apps Script tab: **Deploy → New deployment**.
@@ -40,9 +44,8 @@ Back in the Apps Script tab: **Deploy → New deployment**.
 You'll get a **Web app URL** ending in `/exec`. It looks like:
 
 ```
-https://script.google.com/macros/s/AKfycbzlsvCtDlCipxmui8d941n4O8AHjv7Zx-JVl3vSSpB-usEDisKzFS1p_xIulM0eQrUT/exec
+https://script.google.com/macros/s/AKfycbxxxxxxxxxxxxxxxxxxxxxxxxxxxx/exec
 ```
-
 
 Copy it. That's the only thing you need from this part.
 

@@ -203,8 +203,13 @@ function apply(msg) {
 
 function setUp() {
   Object.keys(SHEETS).forEach(function (n) { sheet(n); });
+
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var first = ss.getSheets()[0];
   if (first.getName() === 'Sheet1' && first.getLastRow() === 0) ss.deleteSheet(first);
-  SpreadsheetApp.getUi().alert('Done. Four tabs are ready: Picks, Bookings, Requests, Todos.');
+  SpreadsheetApp.flush();
+
+  // Logged, not popped up: a UI alert opens on the SPREADSHEET tab, which
+  // blocks the run for anyone watching the script editor instead.
+  Logger.log('Done. Four tabs are ready: Picks, Bookings, Requests, Todos.');
 }

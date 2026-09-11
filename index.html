@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Our Christmas Cruise</title>
-<meta name="description" content="Norwegian Viva, Dec 26 – Jan 2. Cabins, dinners, important dates, and what each of us still needs to do.">
+<meta name="description" content="Norwegian Viva, Dec 26 – Jan 2. Dinners, important dates, and what each of us still needs to do.">
+<meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0E3D46">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -373,7 +374,8 @@ footer button:hover{color:#fff;border-color:#fff}
         </div>
         <div>
           <label class="fl" for="bk-notes">Notes (Optional)</label>
-          <textarea id="bk-notes" maxlength="400" placeholder="Confirmation number, where to meet, what to bring, who else is coming…"></textarea>
+          <textarea id="bk-notes" maxlength="400" placeholder="Where to meet, what to bring, who else is coming…"></textarea>
+          <p class="card-note" style="margin-top:.4rem;margin-bottom:0">This is a public link — skip confirmation numbers and anything you'd rather a stranger not read.</p>
         </div>
       </div>
       <div class="actions">
@@ -387,7 +389,7 @@ footer button:hover{color:#fff;border-color:#fff}
     <h3>Everyone</h3>
     <div class="scroller">
       <table>
-        <thead><tr><th>Name</th><th>Cabin</th><th>Pillow</th><th>Drinks</th><th>Nama Vote</th><th>Status</th></tr></thead>
+        <thead><tr><th>Name</th><th>Pillow</th><th>Drinks</th><th>Nama Vote</th><th>Status</th></tr></thead>
         <tbody id="boardBody"></tbody>
       </table>
     </div>
@@ -497,20 +499,11 @@ footer button:hover{color:#fff;border-color:#fff}
 <div class="panel" id="p-info" role="tabpanel" aria-labelledby="t-info" hidden>
   <h2>Everything Else</h2>
   <div class="block" style="margin-top:1.3rem">
-    <h3>Cabins</h3>
-    <div class="scroller">
-      <table>
-        <thead><tr><th>Cabin</th><th>Guests</th></tr></thead>
-        <tbody>
-          <tr><td class="mono">10352</td><td class="nm">Kathy &amp; Bob</td></tr>
-          <tr><td class="mono">12914</td><td class="nm">Cole &amp; Tim</td></tr>
-          <tr><td class="mono">12306</td><td class="nm">Claire</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="block">
     <dl class="facts">
+      <div class="fact">
+        <dt>Cabin Numbers</dt>
+        <dd>Not on this page on purpose — it's a public link. Claire texted them to everyone; check that thread.</dd>
+      </div>
       <div class="fact">
         <dt>What to Pack</dt>
         <dd>All casual now — shorts and a t-shirt get you into any dining room on the ship, specialty restaurants included.</dd>
@@ -560,12 +553,14 @@ footer button:hover{color:#fff;border-color:#fff}
   /* ── Trip data ──────────────────────────────── */
   var SAIL = new Date(2026, 11, 26);
 
+  /* Cabin numbers are deliberately NOT on this page — it's a public URL.
+     Claire texts those to everyone separately. */
   var GUESTS = [
-    {id:"kathy",  name:"Kathy",  cabin:"10352"},
-    {id:"bob",    name:"Bob",    cabin:"10352"},
-    {id:"cole",   name:"Cole",   cabin:"12914"},
-    {id:"tim",    name:"Tim",    cabin:"12914"},
-    {id:"claire", name:"Claire", cabin:"12306"}
+    {id:"kathy",  name:"Kathy"},
+    {id:"bob",    name:"Bob"},
+    {id:"cole",   name:"Cole"},
+    {id:"tim",    name:"Tim"},
+    {id:"claire", name:"Claire"}
   ];
 
   var PILLOWS = [
@@ -910,7 +905,6 @@ footer button:hover{color:#fff;border-color:#fff}
       function cell(v){ return v ? esc(v) : '<span class="blank">—</span>'; }
       var drinks = p.drinks.length ? p.drinks.map(function(v){ return labelOf(DRINKS,v); }).join(" + ") : null;
       return '<tr><td class="nm">'+esc(g.name)+(g.id===me?' <span class="chip chip-done">you</span>':'')+'</td>' +
-        '<td class="mono">'+esc(g.cabin)+'</td>' +
         '<td>'+cell(labelOf(PILLOWS,p.pillow))+'</td>' +
         '<td>'+cell(drinks)+'</td>' +
         '<td>'+cell(p.nama)+'</td>' +

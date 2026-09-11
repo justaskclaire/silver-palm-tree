@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Our Christmas Cruise</title>
+<meta name="description" content="Norwegian Viva, Dec 26 – Jan 2. Cabins, dinners, important dates, and what each of us still needs to do.">
+<meta name="theme-color" content="#0E3D46">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Libre+Franklin:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#EEF2F1; --surface:#FFFFFF; --surface-2:#E4EBEA;
+  --ink:#12262A; --deep:#0E3D46; --deep-2:#17545F;
+  --brass:#9E6F1E; --brass-bg:#F7EEDC;
+  --seafoam:#136B55; --seafoam-bg:#DDEDE7;
+  --cranberry:#9A2F43; --cranberry-bg:#F7E4E7;
+  --muted:#5C7377; --border:#C9D7D6; --rail:#B9CCCA;
+  --on-deep:#F2F8F7; --on-deep-soft:#A9C8CC; --focus:#C98F26;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#091A1E; --surface:#11282E; --surface-2:#1A373E;
+    --ink:#E6F1F0; --deep:#16505C; --deep-2:#2A7A8A;
+    --brass:#E2AE57; --brass-bg:#33280F;
+    --seafoam:#54C49F; --seafoam-bg:#0C3229;
+    --cranberry:#EE8395; --cranberry-bg:#38151C;
+    --muted:#88A6AB; --border:#26474F; --rail:#2E545C;
+    --on-deep:#F0F8F8; --on-deep-soft:#9FC3C9; --focus:#E2AE57;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#091A1E; --surface:#11282E; --surface-2:#1A373E;
+  --ink:#E6F1F0; --deep:#16505C; --deep-2:#2A7A8A;
+  --brass:#E2AE57; --brass-bg:#33280F;
+  --seafoam:#54C49F; --seafoam-bg:#0C3229;
+  --cranberry:#EE8395; --cranberry-bg:#38151C;
+  --muted:#88A6AB; --border:#26474F; --rail:#2E545C;
+  --on-deep:#F0F8F8; --on-deep-soft:#9FC3C9; --focus:#E2AE57;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:'Libre Franklin',system-ui,-apple-system,sans-serif;
+  font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+.wrap{max-width:880px;margin:0 auto;padding-inline:18px}
+
+/* ── HEADER ─────────────────────────────── */
+.masthead{background:var(--deep);color:var(--on-deep);padding-block:1.8rem 1.4rem}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--on-deep-soft);margin-bottom:.55rem;
+}
+.masthead h1{
+  font-family:'Fraunces',Georgia,serif;font-size:clamp(1.9rem,7vw,2.7rem);
+  font-weight:600;line-height:1.05;letter-spacing:-.015em;color:#fff;text-wrap:balance;
+}
+.masthead p{margin-top:.5rem;font-size:.92rem;color:var(--on-deep-soft);font-weight:300;max-width:50ch}
+
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:1.3rem}
+.tile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:.6rem .7rem}
+.tile-n{font-family:'IBM Plex Mono',monospace;font-size:1.35rem;font-weight:600;font-variant-numeric:tabular-nums;color:#fff;line-height:1.05;display:block}
+.tile-l{font-size:.7rem;color:var(--on-deep-soft);line-height:1.3;display:block;margin-top:.2rem}
+.tile.flag{border-color:var(--brass);background:rgba(226,174,87,.13)}
+.tile.flag .tile-n{color:var(--brass)}
+
+.who{margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.14)}
+.who-q{font-size:.82rem;font-weight:600;letter-spacing:.03em;color:var(--on-deep-soft);margin-bottom:.6rem}
+.who-row{display:flex;flex-wrap:wrap;gap:.45rem}
+.who-btn{
+  font-family:'Libre Franklin',sans-serif;font-size:1rem;font-weight:500;
+  background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22);
+  border-radius:4px;padding:.6rem 1.1rem;min-height:44px;cursor:pointer;
+  transition:background .12s,border-color .12s,color .12s;
+}
+.who-btn:hover{background:rgba(255,255,255,.16)}
+.who-btn[aria-pressed="true"]{background:#fff;color:var(--deep);border-color:#fff;font-weight:600}
+.who-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* ── TABS ───────────────────────────────── */
+.tabbar{position:sticky;top:0;z-index:50;background:var(--deep);border-top:1px solid rgba(255,255,255,.1);box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.tabbar-inner{max-width:880px;margin:0 auto;display:flex;overflow-x:auto;padding-inline:18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabbar-inner::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto;background:none;border:none;cursor:pointer;
+  font-family:'Libre Franklin',sans-serif;font-size:.82rem;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--on-deep-soft);
+  padding:.9rem .9rem;min-height:46px;border-bottom:3px solid transparent;
+  white-space:nowrap;display:flex;align-items:center;gap:.4rem;
+  transition:color .12s,border-color .12s;
+}
+.tab:hover{color:#fff}
+.tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--brass)}
+.tab:focus-visible{outline:2px solid var(--focus);outline-offset:-2px}
+.tab-dot{background:var(--brass);color:var(--deep);font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:600;border-radius:9px;padding:.05em .42em;line-height:1.4}
+
+.panel{padding-block:1.9rem 3rem}
+.panel[hidden]{display:none!important}
+
+h2{font-family:'Fraunces',Georgia,serif;font-size:1.55rem;font-weight:600;line-height:1.15;letter-spacing:-.01em;text-wrap:balance;margin-bottom:.3rem}
+.lede{color:var(--muted);font-size:.92rem;max-width:58ch;margin-bottom:1.3rem}
+.block{margin-top:2.2rem}
+h3{font-family:'Libre Franklin',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem}
+
+/* ── BANNER ─────────────────────────────── */
+.banner{
+  border-radius:4px;padding:.8rem 1rem;font-size:.88rem;line-height:1.5;
+  margin-bottom:1.2rem;border:1px solid var(--border);background:var(--surface);
+}
+.banner[hidden]{display:none!important}
+.banner.bad{background:var(--cranberry-bg);border-color:var(--cranberry);color:var(--cranberry);font-weight:600}
+.banner.busy{background:var(--brass-bg);border-color:var(--brass);color:var(--brass);font-weight:600}
+
+/* ── CARD / FORM ────────────────────────── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1.15rem}
+.card+.card{margin-top:.85rem}
+.card.prompt{border-left:3px solid var(--brass)}
+.card-q{font-family:'Fraunces',Georgia,serif;font-size:1.18rem;font-weight:600;line-height:1.25}
+.card-note{font-size:.83rem;color:var(--muted);margin-top:.2rem;margin-bottom:.8rem}
+
+.opts{display:flex;flex-wrap:wrap;gap:.45rem}
+.opt{position:relative;flex:0 1 auto;min-width:0}
+.opt span{overflow-wrap:normal;word-break:keep-all;hyphens:manual}
+.opt input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opt span{
+  font-size:.92rem;min-height:44px;display:flex;flex-direction:column;justify-content:center;
+  background:var(--surface-2);border:1px solid var(--border);border-radius:4px;
+  padding:.5rem .85rem;cursor:pointer;transition:background .12s,border-color .12s,color .12s;
+}
+.opt input:checked+span{background:var(--seafoam-bg);border-color:var(--seafoam);color:var(--seafoam);font-weight:600}
+.opt input:disabled+span{opacity:.4;cursor:not-allowed}
+.opt input:focus-visible+span{outline:2px solid var(--focus);outline-offset:2px}
+.opt span small{font-size:.72rem;font-weight:400;opacity:.75;margin-top:.05rem}
+.cap{font-size:.78rem;color:var(--muted);margin-top:.6rem;font-family:'IBM Plex Mono',monospace}
+.cap.full{color:var(--seafoam);font-weight:600}
+
+.tally{margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--border);font-size:.85rem;line-height:1.6}
+.tally-l{font-family:'IBM Plex Mono',monospace;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.tally b{font-weight:600}
+.tally .none{color:var(--muted);font-style:italic}
+
+.actions{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:1.1rem}
+.btn{
+  font-family:'Libre Franklin',sans-serif;font-size:.95rem;font-weight:600;
+  background:var(--deep);color:#fff;border:1px solid var(--deep);border-radius:4px;
+  padding:.7rem 1.4rem;min-height:46px;cursor:pointer;transition:opacity .12s;
+}
+.btn:hover{opacity:.88}
+.btn:disabled{opacity:.4;cursor:default}
+.btn-quiet{background:transparent;color:var(--muted);border-color:var(--border);font-weight:500}
+.btn-quiet:hover{color:var(--ink);border-color:var(--muted);opacity:1}
+.btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.status{font-size:.85rem;color:var(--muted)}
+.status.ok{color:var(--seafoam);font-weight:600}
+.status.warn{color:var(--cranberry);font-weight:600}
+
+label.fl{font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+input[type=text],select,textarea{
+  width:100%;font-family:'Libre Franklin',sans-serif;font-size:16px;
+  background:var(--ground);color:var(--ink);border:1px solid var(--border);
+  border-radius:4px;padding:.6rem .7rem;min-height:44px;
+}
+textarea{min-height:70px;resize:vertical;line-height:1.45}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.fields{display:grid;gap:.8rem}
+.fields.two{grid-template-columns:1fr 1fr}
+
+/* ── TODO ───────────────────────────────── */
+.todo{display:grid;gap:.5rem;margin-bottom:1.4rem}
+.todo-row{display:flex;align-items:center;gap:.7rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--brass);border-radius:4px;padding:.7rem .9rem;font-size:.94rem}
+.todo-row.done{border-left-color:var(--seafoam);color:var(--muted)}
+.todo-mark{font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--brass);flex-shrink:0;width:1.1em;text-align:center}
+.todo-row.done .todo-mark{color:var(--seafoam)}
+.allclear{background:var(--seafoam-bg);border:1px solid var(--seafoam);border-radius:4px;padding:.85rem 1rem;font-size:.94rem;color:var(--seafoam);font-weight:600;margin-bottom:1.4rem}
+
+.tasks{list-style:none;display:grid;gap:.5rem}
+.task{display:flex;gap:.75rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:.75rem .9rem}
+.task.done{opacity:.62}
+.task-check{flex-shrink:0;margin-top:.1rem}
+.task-check input{width:22px;height:22px;min-height:22px;accent-color:var(--seafoam);cursor:pointer;padding:0}
+.task-main{flex:1;min-width:0}
+.task-t{font-size:.95rem;font-weight:600;line-height:1.35}
+.task.done .task-t{text-decoration:line-through;font-weight:500}
+.task-meta{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:.3rem}
+
+/* ── TABLES ─────────────────────────────── */
+.scroller{overflow-x:auto;border:1px solid var(--border);border-radius:4px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+thead th{background:var(--deep);color:var(--on-deep-soft);font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;padding:.65rem .8rem;text-align:left;white-space:nowrap}
+tbody tr{border-top:1px solid var(--border)}
+tbody tr:first-child{border-top:none}
+td{padding:.7rem .8rem;vertical-align:top;line-height:1.4}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-variant-numeric:tabular-nums}
+.blank{color:var(--muted);opacity:.55}
+.nm{font-weight:600;white-space:nowrap}
+.chip{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;padding:.2em .5em;border-radius:3px;white-space:nowrap}
+.chip-done{background:var(--seafoam-bg);color:var(--seafoam)}
+.chip-todo{background:var(--brass-bg);color:var(--brass)}
+.chip-nye{background:var(--cranberry-bg);color:var(--cranberry)}
+.chip-who{background:var(--surface-2);color:var(--muted)}
+.night-date{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.88rem;white-space:nowrap}
+.night-dow{display:block;font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.rest{font-family:'Fraunces',Georgia,serif;font-size:1.05rem;font-weight:600;line-height:1.2}
+.cuisine{color:var(--muted);font-size:.84rem}
+
+/* ── CALLOUT ────────────────────────────── */
+.callout{border:1px solid var(--border);border-left:3px solid var(--brass);background:var(--surface);border-radius:4px;padding:.95rem 1.1rem;margin-top:1.1rem;font-size:.89rem;line-height:1.55}
+.callout-title{font-family:'IBM Plex Mono',monospace;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:.35rem}
+.callout.plain{border-left-color:var(--rail)}
+.callout.plain .callout-title{color:var(--muted)}
+
+/* ── DATES ──────────────────────────────── */
+.sailday{
+  background:var(--deep);color:var(--on-deep);border-radius:4px;
+  padding:1.5rem 1.4rem;margin-bottom:1.8rem;border:1px solid var(--deep);
+}
+.sailday .lbl{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:.5rem}
+.sailday .big{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,6.5vw,2.6rem);font-weight:600;line-height:1.05;color:#fff;letter-spacing:-.015em}
+.sailday .sub{margin-top:.5rem;font-size:.92rem;color:var(--on-deep-soft)}
+.sailday .cd{font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:600;color:var(--brass);margin-top:.7rem;display:block}
+
+.dl{background:var(--surface);border:1px solid var(--border);border-radius:4px;border-top:4px solid var(--brass);padding:1.15rem;margin-bottom:1rem}
+.dl.soon{border-top-color:var(--cranberry)}
+.dl-top{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin-bottom:.45rem}
+.dl-date{font-family:'IBM Plex Mono',monospace;font-size:1.2rem;font-weight:600;font-variant-numeric:tabular-nums}
+.dl-count{font-size:.82rem;font-weight:600;color:var(--brass);font-family:'IBM Plex Mono',monospace}
+.dl.soon .dl-count{color:var(--cranberry)}
+.dl-rule{font-size:.72rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;letter-spacing:.03em;margin-left:auto}
+.dl-what{font-family:'Fraunces',Georgia,serif;font-size:1.28rem;font-weight:600;line-height:1.2;margin-bottom:.4rem}
+.dl-body{font-size:.92rem;line-height:1.55;color:var(--muted)}
+.dl-body b{color:var(--ink);font-weight:600}
+.dl-body ul{margin:.5rem 0 0 1.1rem}
+
+/* ── SCHEDULE ───────────────────────────── */
+.day{display:grid;grid-template-columns:58px 1fr;gap:1rem;padding-block:1rem;border-top:1px solid var(--border);align-items:start}
+.day:first-child{border-top:none;padding-top:0}
+.day-mark{text-align:right;padding-top:.1rem}
+.day-n{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;display:block}
+.day-d{font-family:'IBM Plex Mono',monospace;font-size:.92rem;font-weight:600;font-variant-numeric:tabular-nums}
+.day-body{border-left:2px solid var(--rail);padding-left:1rem}
+.day.port .day-body{border-left-color:var(--seafoam)}
+.day.turn .day-body{border-left-color:var(--brass)}
+.day-place{font-family:'Fraunces',Georgia,serif;font-size:1.12rem;font-weight:600;line-height:1.25}
+.day.sea .day-place{font-weight:400;color:var(--muted)}
+.day-times{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--muted);margin-top:.1rem}
+.day-dine{font-size:.84rem;color:var(--muted);margin-top:.2rem}
+.day-dine b{color:var(--ink);font-weight:600}
+.day-plans{margin-top:.6rem;display:grid;gap:.35rem}
+.plan{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:.5rem .7rem;font-size:.86rem;line-height:1.4}
+.plan-top{display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
+.plan-t{font-weight:600}
+.plan-time{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--muted)}
+.plan-note{font-size:.82rem;color:var(--muted);margin-top:.2rem}
+
+/* ── LISTS ──────────────────────────────── */
+.items{list-style:none;display:grid;gap:.55rem}
+.item{display:flex;gap:.7rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:.75rem .9rem;font-size:.92rem}
+.item-main{flex:1;min-width:0}
+.item-main b{font-weight:600}
+.item-sub{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--muted);display:block;margin-top:.1rem}
+.item-note{font-size:.85rem;color:var(--muted);margin-top:.3rem;line-height:1.45;white-space:pre-wrap}
+.del{background:none;border:none;color:var(--muted);font-size:1.3rem;line-height:1;cursor:pointer;padding:.1rem .3rem;flex-shrink:0;min-height:32px}
+.del:hover{color:var(--cranberry)}
+.del:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.empty{font-size:.89rem;color:var(--muted);font-style:italic;padding:.3rem 0}
+
+/* ── FACTS ──────────────────────────────── */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem}
+.fact dt{font-family:'IBM Plex Mono',monospace;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.fact dd{font-size:.93rem;line-height:1.5}
+.fact dd+dd{margin-top:.3rem}
+.fact a{color:var(--deep-2);text-underline-offset:2px}
+.tel{font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:600}
+
+footer{background:var(--deep);color:var(--on-deep-soft);padding-block:1.3rem;font-size:.8rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;justify-content:space-between;align-items:center}
+footer button{background:none;border:1px solid rgba(255,255,255,.25);color:var(--on-deep-soft);border-radius:4px;padding:.35rem .8rem;font-family:inherit;font-size:.78rem;cursor:pointer}
+footer button:hover{color:#fff;border-color:#fff}
+
+@media (max-width:620px){
+  .tiles{grid-template-columns:1fr 1fr}
+  .fields.two{grid-template-columns:1fr}
+  .day{grid-template-columns:50px 1fr;gap:.75rem}
+  .dl-rule{margin-left:0;width:100%}
+  .opt{flex:1 1 calc(50% - .25rem)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Norwegian Viva &nbsp;·&nbsp; Dec 26 – Jan 2 &nbsp;·&nbsp; Galveston</div>
+    <h1>Our Christmas Cruise</h1>
+    <p id="hdrSub">Three cabins, seven dinners, and the dates we can't miss.</p>
+    <div class="tiles" id="tiles"></div>
+    <div class="who">
+      <div class="who-q" id="whoQ">Who Are You?</div>
+      <div class="who-row" id="whoRow"></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabbar"><div class="tabbar-inner" id="tabbar" role="tablist" aria-label="Sections"></div></nav>
+
+<main class="wrap">
+<div class="banner" id="banner" hidden></div>
+
+<!-- ═══ YOU ═══ -->
+<div class="panel" id="p-you" role="tabpanel" aria-labelledby="t-you">
+  <h2 id="youH2">Your Page</h2>
+  <p class="lede" id="youLede">Tap your name above and this becomes your page — your picks, your bookings, and anything assigned to you.</p>
+
+  <div id="youTodo"></div>
+
+  <div class="card prompt">
+    <div class="card-q">Pillow</div>
+    <div class="card-note">Your steward has this waiting when you board.</div>
+    <div class="opts" id="opt-pillow"></div>
+  </div>
+
+  <div class="card prompt">
+    <div class="card-q">Fridge Drinks — Pick Up to 2</div>
+    <div class="card-note">Swap them any time once we're on board.</div>
+    <div class="opts" id="opt-drinks"></div>
+    <div class="cap" id="drinkCap"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-q">Nama Sushi — Worth Trading a Night For?</div>
+    <div class="card-note">Optional. Nama is walk-in only, so it can't be reserved — we'd cancel a night instead. Dec 31 is the easiest to give up: that second Cagney's only exists because Nama couldn't be booked.</div>
+    <div class="opts" id="opt-nama"></div>
+    <div class="tally" id="namaTally"></div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" id="saveBtn" type="button" disabled>Save</button>
+    <span class="status" id="saveStatus"></span>
+  </div>
+
+  <div class="block">
+    <h3>Assigned to You</h3>
+    <ul class="tasks" id="myTasks"></ul>
+  </div>
+
+  <div class="block">
+    <h3>What You've Booked</h3>
+    <p class="lede">Spa, excursions, anything the rest of us wouldn't otherwise know about. These show up on the Schedule tab under the right day.</p>
+    <ul class="items" id="myBookings"></ul>
+    <form class="card" id="bookForm" style="margin-top:.85rem" hidden>
+      <div class="fields">
+        <div>
+          <label class="fl" for="bk-title">What Is It?</label>
+          <input type="text" id="bk-title" placeholder="Thermal spa pass, cave tubing, massage…" maxlength="90" autocomplete="off">
+        </div>
+        <div class="fields two">
+          <div>
+            <label class="fl" for="bk-day">Day</label>
+            <select id="bk-day"></select>
+          </div>
+          <div>
+            <label class="fl" for="bk-time">Time (Optional)</label>
+            <input type="text" id="bk-time" placeholder="2:00 pm" maxlength="24" autocomplete="off">
+          </div>
+        </div>
+        <div>
+          <label class="fl" for="bk-notes">Notes (Optional)</label>
+          <textarea id="bk-notes" maxlength="400" placeholder="Confirmation number, where to meet, what to bring, who else is coming…"></textarea>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" type="submit">Add Booking</button>
+        <span class="status" id="bookStatus"></span>
+      </div>
+    </form>
+  </div>
+
+  <div class="block">
+    <h3>Everyone</h3>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Name</th><th>Cabin</th><th>Pillow</th><th>Drinks</th><th>Nama Vote</th><th>Status</th></tr></thead>
+        <tbody id="boardBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TO-DO ═══ -->
+<div class="panel" id="p-todo" role="tabpanel" aria-labelledby="t-todo" hidden>
+  <h2>To-Do List</h2>
+  <p class="lede">Anything anybody needs to handle before we sail. Assign it to a person or leave it for everyone. Anyone can add, check off, or delete.</p>
+  <ul class="tasks" id="taskList"></ul>
+  <form class="card" id="taskForm" style="margin-top:1rem" hidden>
+    <div class="fields">
+      <div>
+        <label class="fl" for="td-task">What Needs Doing?</label>
+        <input type="text" id="td-task" placeholder="Confirm the Galveston hotel the night before" maxlength="140" autocomplete="off">
+      </div>
+      <div class="fields two">
+        <div>
+          <label class="fl" for="td-who">Assign To</label>
+          <select id="td-who"></select>
+        </div>
+        <div>
+          <label class="fl" for="td-due">By When (Optional)</label>
+          <input type="text" id="td-due" placeholder="Dec 24, or 'before check-in'" maxlength="40" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" type="submit">Add To-Do</button>
+      <span class="status" id="taskStatus"></span>
+    </div>
+  </form>
+  <p class="empty" id="taskLocked">Tap your name at the top to add a to-do.</p>
+</div>
+
+<!-- ═══ DATES ═══ -->
+<div class="panel" id="p-dates" role="tabpanel" aria-labelledby="t-dates" hidden>
+  <h2>Important Dates</h2>
+  <p class="lede">Everything below counts backward from sail day.</p>
+  <div class="sailday">
+    <div class="lbl">Sail Day</div>
+    <div class="big">Saturday, December 26</div>
+    <div class="sub">Norwegian Viva leaves Galveston around 3:00 pm. Back Saturday, January 2.</div>
+    <span class="cd" id="sailCount"></span>
+  </div>
+  <h3>Before We Sail</h3>
+  <div id="deadlineList"></div>
+</div>
+
+<!-- ═══ DINNERS ═══ -->
+<div class="panel" id="p-dinners" role="tabpanel" aria-labelledby="t-dinners" hidden>
+  <h2>Dinner Reservations</h2>
+  <p class="lede">6:30 pm every night, same time all week. All seven are booked and confirmed.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>Night</th><th>Restaurant</th><th>Cuisine</th><th></th></tr></thead>
+      <tbody id="dinnerBody"></tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <div class="callout-title">Why Cagney's Twice</div>
+    Nama Sushi turned out to be <b>walk-in only</b> — there's no reservation to hold. Dec 31 went to Cagney's a second time rather than leaving the night open. We can still do Nama whenever we want; it just means cancelling that night's reservation at least <b>2 hours ahead</b>.
+  </div>
+  <div class="block">
+    <h3>Request a Change</h3>
+    <p class="lede">Put in a request and Claire will take it to the concierge. Nothing changes until she confirms it back here.</p>
+    <ul class="items" id="requestList"></ul>
+    <form class="card" id="requestForm" style="margin-top:.85rem" hidden>
+      <div class="fields">
+        <div class="fields two">
+          <div>
+            <label class="fl" for="rq-night">Which Night</label>
+            <select id="rq-night"></select>
+          </div>
+          <div>
+            <label class="fl" for="rq-want">Change It To</label>
+            <select id="rq-want"></select>
+          </div>
+        </div>
+        <div>
+          <label class="fl" for="rq-note">Why / Anything Else (Optional)</label>
+          <textarea id="rq-note" maxlength="300" placeholder="Only if it works for everyone — we'd rather not do steak twice…"></textarea>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" type="submit">Send Request</button>
+        <span class="status" id="requestStatus"></span>
+      </div>
+    </form>
+    <p class="empty" id="requestLocked">Tap your name at the top to request a change.</p>
+  </div>
+</div>
+
+<!-- ═══ SCHEDULE ═══ -->
+<div class="panel" id="p-schedule" role="tabpanel" aria-labelledby="t-schedule" hidden>
+  <h2>Schedule</h2>
+  <p class="lede">Four port days, two at sea. Anything anyone books shows up on its day — add yours from your own page.</p>
+  <div id="daysList"></div>
+  <div class="callout plain">
+    <div class="callout-title">Before You Book an Excursion</div>
+    Port times are approximate — published schedules disagree by about an hour, and the ship's real times can shift. Check the NCL app closer to sailing and leave yourself a cushion getting back.
+  </div>
+</div>
+
+<!-- ═══ INFO ═══ -->
+<div class="panel" id="p-info" role="tabpanel" aria-labelledby="t-info" hidden>
+  <h2>Everything Else</h2>
+  <div class="block" style="margin-top:1.3rem">
+    <h3>Cabins</h3>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Cabin</th><th>Guests</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">10352</td><td class="nm">Kathy &amp; Bob</td></tr>
+          <tr><td class="mono">12914</td><td class="nm">Cole &amp; Tim</td></tr>
+          <tr><td class="mono">12306</td><td class="nm">Claire</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="block">
+    <dl class="facts">
+      <div class="fact">
+        <dt>What to Pack</dt>
+        <dd>All casual now — shorts and a t-shirt get you into any dining room on the ship, specialty restaurants included.</dd>
+        <dd><b>Only two rules:</b> nothing extremely short, and no offensive graphic tees.</dd>
+      </div>
+      <div class="fact">
+        <dt>Shows</dt>
+        <dd>Nothing to do beforehand. Book through the concierge once we're aboard, or from the interactive TV in your cabin.</dd>
+      </div>
+      <div class="fact">
+        <dt>Concierge</dt>
+        <dd class="tel"><a href="tel:+18556254283">855-625-4283</a></dd>
+        <dd>Dining changes, show tickets, anything before we sail.</dd>
+      </div>
+      <div class="fact">
+        <dt>NCL Customer Service</dt>
+        <dd class="tel"><a href="tel:+18662347350">866-234-7350</a></dd>
+      </div>
+      <div class="fact">
+        <dt>Terminal</dt>
+        <dd>Cruise Terminal 16<br>1602 Harborside Dr<br>Galveston, TX 77550</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>5 of us · 3 cabins · 7 dinners</span>
+    <button type="button" id="refreshBtn">Refresh</button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ══════════════════════════════════════════════════════════
+     PASTE YOUR APPS SCRIPT WEB APP URL BETWEEN THE QUOTES.
+     It looks like:
+     https://script.google.com/macros/s/AKfycb.....CDE/exec
+     ══════════════════════════════════════════════════════════ */
+  var API_URL = "https://script.google.com/macros/s/AKfycbzlsvCtDlCipxmui8d941n4O8AHjv7Zx-JVl3vSSpB-usEDisKzFS1p_xIulM0eQrUT/exec";
+
+
+  /* ── Trip data ──────────────────────────────── */
+  var SAIL = new Date(2026, 11, 26);
+
+  var GUESTS = [
+    {id:"kathy",  name:"Kathy",  cabin:"10352"},
+    {id:"bob",    name:"Bob",    cabin:"10352"},
+    {id:"cole",   name:"Cole",   cabin:"12914"},
+    {id:"tim",    name:"Tim",    cabin:"12914"},
+    {id:"claire", name:"Claire", cabin:"12306"}
+  ];
+
+  var PILLOWS = [
+    {v:"Feathered",       l:"Feathered"},
+    {v:"Overfilled firm", l:"Overfilled Firm", s:"down + pillow material"},
+    {v:"Memory foam",     l:"Memory Foam",     s:"Tempur-Pedic style"},
+    {v:"Hypoallergenic",  l:"Hypoallergenic",  s:"synthetic, no pet dander"}
+  ];
+
+  var DRINKS = [
+    {v:"Orange",l:"Orange"},{v:"Apple",l:"Apple"},{v:"Cranberry",l:"Cranberry"},
+    {v:"Pineapple",l:"Pineapple"},{v:"Lemonade",l:"Lemonade"},
+    {v:"Sweet tea",l:"Sweet Tea"},{v:"Unsweet tea",l:"Unsweet Tea"}
+  ];
+  var DRINK_MAX = 2;
+
+  var NIGHTS = [
+    {date:"Dec 26", dow:"Sat", rest:"Cagney's Steakhouse", short:"Cagney's",  cuisine:"American steakhouse", tag:"Embarkation"},
+    {date:"Dec 27", dow:"Sun", rest:"Onda by Scarpetta",   short:"Onda",      cuisine:"Modern Italian"},
+    {date:"Dec 28", dow:"Mon", rest:"Le Bistro",           short:"Le Bistro", cuisine:"French fine dining"},
+    {date:"Dec 29", dow:"Tue", rest:"Palomar",             short:"Palomar",   cuisine:"Mediterranean seafood"},
+    {date:"Dec 30", dow:"Wed", rest:"Q Texas Roadhouse",   short:"Q Texas",   cuisine:"Texas BBQ"},
+    {date:"Dec 31", dow:"Thu", rest:"Cagney's Steakhouse", short:"Cagney's",  cuisine:"American steakhouse", tag:"New Year's Eve"},
+    {date:"Jan 1",  dow:"Fri", rest:"Los Lobos",           short:"Los Lobos", cuisine:"Contemporary Mexican", tag:"New Year's Day"}
+  ];
+
+  var ALTERNATES = [
+    "Nama Sushi (walk-in)","Hasuki (teppanyaki)","Food Republic","Onda by Scarpetta",
+    "Le Bistro","Los Lobos","Palomar","Cagney's Steakhouse","Q Texas Roadhouse",
+    "Hudson's (main dining room)","The Commodore Room","Indulge Food Hall",
+    "Skip it — something casual","Not sure, let's talk"
+  ];
+
+  var DAYS = [
+    {n:1, d:"Dec 26", kind:"turn", place:"Galveston, Texas",     times:"Sail away ~3:00 pm", dine:"Cagney's Steakhouse"},
+    {n:2, d:"Dec 27", kind:"sea",  place:"At Sea",               times:"",                   dine:"Onda by Scarpetta"},
+    {n:3, d:"Dec 28", kind:"port", place:"Cozumel, Mexico",      times:"~8:00 am – 5:00 pm", dine:"Le Bistro"},
+    {n:4, d:"Dec 29", kind:"port", place:"Roatán, Honduras",     times:"~8:00 am – 5:00 pm", dine:"Palomar"},
+    {n:5, d:"Dec 30", kind:"port", place:"Harvest Caye, Belize", times:"~7:00 am – 5:00 pm", dine:"Q Texas Roadhouse"},
+    {n:6, d:"Dec 31", kind:"port", place:"Costa Maya, Mexico",   times:"~7:00 am – 1:00 pm", dine:"Cagney's Steakhouse"},
+    {n:7, d:"Jan 1",  kind:"sea",  place:"At Sea",               times:"",                   dine:"Los Lobos"},
+    {n:8, d:"Jan 2",  kind:"turn", place:"Galveston, Texas",     times:"Disembark ~8:00 am", dine:""}
+  ];
+
+  var NAMA_OPTS = [{v:"Leave as-is", l:"Leave It As-Is"}];
+  NIGHTS.forEach(function(n){ NAMA_OPTS.push({v:n.date, l:n.date, s:"instead of " + n.short}); });
+
+  /* Add more here any time — they sort themselves into order. */
+  var DEADLINES = [
+    {date:new Date(2026,10,11), label:"Wed, Nov 11", rule:"45 days before we sail",
+     what:"Luggage Tags Arrive",
+     body:"Six tags per cabin. If you need more, you can print them yourself any time after they show up."},
+    {date:new Date(2026,11,5), label:"Sat, Dec 5", rule:"21 days before we sail",
+     what:"Online Check-In Opens",
+     body:"Have your passport or travel documents in hand — and everyone has to watch the muster video.<ul><li><b>Let's do this together on a call.</b> Boarding times are first-come, and doing it at the same time is how we all get the same one.</li></ul>"}
+  ];
+
+  var TABS = [
+    {id:"you",      label:"You"},
+    {id:"todo",     label:"To-Do"},
+    {id:"dates",    label:"Dates"},
+    {id:"dinners",  label:"Dinners"},
+    {id:"schedule", label:"Schedule"},
+    {id:"info",     label:"Info"}
+  ];
+
+  /* ── App state ──────────────────────────────── */
+  var data = {picks:{}, bookings:[], requests:[], todos:[]};
+  var me = null, tab = "you", online = false;
+
+  try { me = localStorage.getItem("cruise-who") || null; } catch(e){}
+  if(me && !guest(me)) me = null;
+  try { var t = localStorage.getItem("cruise-tab"); if(t) tab = t; } catch(e){}
+
+  /* ── Utilities ──────────────────────────────── */
+  function esc(s){
+    return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function guest(id){
+    for(var i=0;i<GUESTS.length;i++) if(GUESTS[i].id===id) return GUESTS[i];
+    return null;
+  }
+  function nameOf(id){ var g = guest(id); return g ? g.name : (id || "—"); }
+  function labelOf(list,v){
+    if(!v) return null;
+    for(var i=0;i<list.length;i++) if(list[i].v===v) return list[i].l;
+    return v;
+  }
+  function picks(id){
+    var p = data.picks[id];
+    if(!p) return {pillow:null, drinks:[], nama:null};
+    return {pillow:p.pillow||null, drinks:p.drinks||[], nama:p.nama||null};
+  }
+  function complete(id){ var p = picks(id); return !!(p.pillow && p.drinks.length); }
+  function openCount(id){
+    var p = picks(id), n = 0;
+    if(!p.pillow) n++;
+    if(!p.drinks.length) n++;
+    data.todos.forEach(function(t){ if(!t.done && t.assignee === id) n++; });
+    return n;
+  }
+  function daysUntil(d){
+    var now = new Date(); now.setHours(0,0,0,0);
+    return Math.ceil((d - now)/86400000);
+  }
+  function uid(p){ return p + Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+
+  /* ── Network ────────────────────────────────── */
+  function banner(msg, kind){
+    var el = document.getElementById("banner");
+    if(!msg){ el.hidden = true; return; }
+    el.hidden = false;
+    el.className = "banner" + (kind ? " " + kind : "");
+    el.innerHTML = msg;
+  }
+
+  function load(){
+    if(!API_URL){
+      banner("<b>Not connected yet.</b> The spreadsheet link hasn't been added to this page, so nothing you enter will save. Claire needs to paste the Apps Script URL into <code>index.html</code>.", "bad");
+      renderAll();
+      return Promise.resolve();
+    }
+    return fetch(API_URL, {method:"GET"})
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(!res.ok) throw new Error(res.error || "bad response");
+        data = res.data; online = true; banner(null); renderAll();
+      })
+      .catch(function(){
+        online = false;
+        banner("<b>Can't reach the spreadsheet right now.</b> You can still read everything, but changes won't save. Try Refresh at the bottom in a minute.", "bad");
+        renderAll();
+      });
+  }
+
+  function send(msg, statusEl, okMsg){
+    if(!API_URL || !online){
+      if(statusEl){ statusEl.textContent = "Not connected — nothing was saved."; statusEl.className = "status warn"; }
+      return Promise.resolve(false);
+    }
+    if(statusEl){ statusEl.textContent = "Saving…"; statusEl.className = "status"; }
+    return fetch(API_URL, {
+      method:"POST",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body: JSON.stringify(msg)
+    })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if(!res.ok) throw new Error(res.error || "rejected");
+        data = res.data; renderAll();
+        if(statusEl){ statusEl.textContent = okMsg; statusEl.className = "status ok"; }
+        return true;
+      })
+      .catch(function(){
+        if(statusEl){ statusEl.textContent = "Didn't save. Check your connection and try again."; statusEl.className = "status warn"; }
+        return false;
+      });
+  }
+
+  /* ── Header ─────────────────────────────────── */
+  function renderHeader(){
+    var tiles = [
+      {n: daysUntil(SAIL),              l:"days until<br>we sail"},
+      {n: daysUntil(DEADLINES[0].date), l:"days until<br>luggage tags"},
+      {n: daysUntil(DEADLINES[1].date), l:"days until<br>check-in"}
+    ];
+    if(me){
+      var open = openCount(me);
+      tiles.push(open
+        ? {n:open, l:(open===1?"thing needs<br>you":"things need<br>you"), flag:true}
+        : {n:"✓",  l:"you're all<br>set"});
+    } else {
+      var waiting = 0;
+      GUESTS.forEach(function(g){ if(!complete(g.id)) waiting++; });
+      tiles.push({n:waiting, l:(waiting===1?"person still<br>owes picks":"people still<br>owe picks"), flag:waiting>0});
+    }
+    document.getElementById("tiles").innerHTML = tiles.map(function(t){
+      var n = (typeof t.n === "number" && t.n < 0) ? "—" : t.n;
+      return '<div class="tile'+(t.flag?" flag":"")+'"><span class="tile-n">'+n+
+             '</span><span class="tile-l">'+t.l+'</span></div>';
+    }).join("");
+
+    document.getElementById("whoQ").textContent = me ? "Not You? Tap a Different Name." : "Who Are You?";
+    document.getElementById("whoRow").innerHTML = GUESTS.map(function(g){
+      return '<button type="button" class="who-btn" data-id="'+g.id+'" aria-pressed="'+(me===g.id)+'">'+esc(g.name)+'</button>';
+    }).join("");
+
+    document.getElementById("hdrSub").textContent = me
+      ? (openCount(me) ? "Hi " + nameOf(me) + " — a few things still need you."
+                       : "Hi " + nameOf(me) + " — you're all caught up.")
+      : "Three cabins, seven dinners, and the dates we can't miss.";
+  }
+
+  function renderTabs(){
+    document.getElementById("tabbar").innerHTML = TABS.map(function(t){
+      var dot = "";
+      if(t.id === "you" && me && openCount(me)) dot = '<span class="tab-dot">'+openCount(me)+'</span>';
+      if(t.id === "todo"){
+        var n = data.todos.filter(function(x){ return !x.done; }).length;
+        if(n) dot = '<span class="tab-dot">'+n+'</span>';
+      }
+      return '<button type="button" class="tab" role="tab" id="t-'+t.id+'" aria-controls="p-'+t.id+
+             '" aria-selected="'+(tab===t.id)+'" data-tab="'+t.id+'">'+esc(t.label)+dot+'</button>';
+    }).join("");
+    TABS.forEach(function(t){ document.getElementById("p-"+t.id).hidden = (t.id !== tab); });
+  }
+
+  function setTab(id, scroll){
+    tab = id;
+    try { localStorage.setItem("cruise-tab", id); } catch(e){}
+    renderTabs();
+    if(scroll){
+      var y = document.querySelector(".tabbar").getBoundingClientRect().top + window.pageYOffset;
+      if(window.pageYOffset > y) window.scrollTo(0, y);
+    }
+  }
+
+  /* ── You ────────────────────────────────────── */
+  function optGroup(elId, name, list, current, multi){
+    var sel = multi ? (current || []) : current;
+    var atMax = multi && sel.length >= DRINK_MAX;
+    document.getElementById(elId).innerHTML = list.map(function(o,i){
+      var on = multi ? sel.indexOf(o.v) !== -1 : sel === o.v;
+      var dis = !me || (multi && atMax && !on);
+      return '<label class="opt"><input type="'+(multi?"checkbox":"radio")+'" name="'+name+
+        '" id="'+name+"-"+i+'" value="'+esc(o.v)+'"'+(on?" checked":"")+(dis?" disabled":"")+
+        '><span>'+esc(o.l)+(o.s?'<small>'+esc(o.s)+'</small>':'')+'</span></label>';
+    }).join("");
+  }
+  function readDrinks(){
+    var out = [], boxes = document.querySelectorAll("#opt-drinks input:checked");
+    for(var i=0;i<boxes.length;i++) out.push(boxes[i].value);
+    return out;
+  }
+  function updateDrinkCap(){
+    var n = readDrinks().length, el = document.getElementById("drinkCap");
+    el.textContent = n + " of " + DRINK_MAX + " picked";
+    el.className = "cap" + (n >= DRINK_MAX ? " full" : "");
+  }
+
+  function renderYou(){
+    var p = me ? picks(me) : {pillow:null, drinks:[], nama:null};
+    optGroup("opt-pillow","pillow",PILLOWS,p.pillow,false);
+    optGroup("opt-drinks","drinks",DRINKS,p.drinks,true);
+    optGroup("opt-nama","nama",NAMA_OPTS,p.nama,false);
+    updateDrinkCap();
+
+    document.getElementById("youH2").textContent = me ? nameOf(me) + "'s Page" : "Your Page";
+    document.getElementById("youLede").textContent = me
+      ? "Your picks and your bookings, all in one place. Everyone's answers are at the bottom."
+      : "Tap your name above and this becomes your page — your picks, your bookings, and anything assigned to you.";
+
+    var btn = document.getElementById("saveBtn");
+    btn.disabled = !me;
+    btn.textContent = me ? "Save " + nameOf(me) + "'s Picks" : "Save";
+
+    /* to-do strip */
+    var box = document.getElementById("youTodo");
+    if(!me){ box.innerHTML = ""; }
+    else if(openCount(me) === 0){
+      box.innerHTML = '<div class="allclear">✓ Nothing left for you to do — thanks, '+esc(nameOf(me))+'.</div>';
+    } else {
+      var rows = [];
+      if(!p.pillow) rows.push("Pick a pillow");
+      if(!p.drinks.length) rows.push("Pick your fridge drinks");
+      data.todos.forEach(function(t){ if(!t.done && t.assignee === me) rows.push(t.task); });
+      box.innerHTML = '<div class="todo">' + rows.map(function(r){
+        return '<div class="todo-row"><span class="todo-mark">•</span><b>'+esc(r)+'</b></div>';
+      }).join("") + '</div>';
+    }
+
+    renderNamaTally();
+    renderMyTasks();
+    renderMyBookings();
+  }
+
+  function renderNamaTally(){
+    var votes = {};
+    GUESTS.forEach(function(g){
+      var v = picks(g.id).nama;
+      if(!v) return;
+      (votes[v] = votes[v] || []).push(g.name);
+    });
+    var keys = Object.keys(votes);
+    var html = '<div class="tally-l">Votes So Far</div>';
+    if(!keys.length){
+      html += '<span class="none">Nobody has voted yet.</span>';
+    } else {
+      html += keys.map(function(k){
+        return '<div><b>'+esc(k)+'</b> — '+esc(votes[k].join(", "))+'</div>';
+      }).join("");
+      var missing = GUESTS.filter(function(g){ return !picks(g.id).nama; }).map(function(g){ return g.name; });
+      if(missing.length) html += '<div class="none">No vote yet: '+esc(missing.join(", "))+'</div>';
+    }
+    document.getElementById("namaTally").innerHTML = html;
+  }
+
+  function taskHTML(t, showWho){
+    var who = t.assignee ? nameOf(t.assignee) : "Everyone";
+    return '<li class="task'+(t.done?" done":"")+'">' +
+      '<span class="task-check"><input type="checkbox" data-todo="'+esc(t.id)+'"'+(t.done?" checked":"")+
+      (me?"":" disabled")+' aria-label="Mark done"></span>' +
+      '<span class="task-main"><span class="task-t">'+esc(t.task)+'</span>' +
+      '<span class="task-meta">' +
+        (showWho ? '<span class="chip chip-who">'+esc(who)+'</span>' : '') +
+        (t.due ? '<span class="chip chip-todo">'+esc(t.due)+'</span>' : '') +
+      '</span></span>' +
+      (me ? '<button type="button" class="del" data-deltodo="'+esc(t.id)+'" aria-label="Delete">&times;</button>' : '') +
+      '</li>';
+  }
+
+  function renderMyTasks(){
+    var ul = document.getElementById("myTasks");
+    if(!me){ ul.innerHTML = '<li class="empty">Tap your name above to see what\'s assigned to you.</li>'; return; }
+    var mine = data.todos.filter(function(t){ return t.assignee === me || !t.assignee; });
+    mine.sort(function(a,b){ return (a.done?1:0) - (b.done?1:0); });
+    ul.innerHTML = mine.length
+      ? mine.map(function(t){ return taskHTML(t, !t.assignee); }).join("")
+      : '<li class="empty">Nothing assigned to you.</li>';
+  }
+
+  function renderMyBookings(){
+    var ul = document.getElementById("myBookings");
+    document.getElementById("bookForm").hidden = !me;
+    if(!me){ ul.innerHTML = '<li class="empty">Tap your name above to add something.</li>'; return; }
+    var mine = data.bookings.filter(function(b){ return b.person === me; });
+    mine.sort(function(a,b){ return a.day - b.day; });
+    ul.innerHTML = mine.length ? mine.map(function(b){
+      var d = DAYS[b.day-1];
+      return '<li class="item"><span class="item-main"><b>'+esc(b.title)+'</b>' +
+        '<span class="item-sub">Day '+b.day+' · '+esc(d?d.d:"")+' · '+esc(d?d.place:"")+
+        (b.time?" · "+esc(b.time):"")+'</span>' +
+        (b.notes?'<span class="item-note">'+esc(b.notes)+'</span>':'') + '</span>' +
+        '<button type="button" class="del" data-delbook="'+esc(b.id)+'" aria-label="Remove">&times;</button></li>';
+    }).join("") : '<li class="empty">Nothing added yet.</li>';
+  }
+
+  function renderBoard(){
+    document.getElementById("boardBody").innerHTML = GUESTS.map(function(g){
+      var p = picks(g.id);
+      function cell(v){ return v ? esc(v) : '<span class="blank">—</span>'; }
+      var drinks = p.drinks.length ? p.drinks.map(function(v){ return labelOf(DRINKS,v); }).join(" + ") : null;
+      return '<tr><td class="nm">'+esc(g.name)+(g.id===me?' <span class="chip chip-done">you</span>':'')+'</td>' +
+        '<td class="mono">'+esc(g.cabin)+'</td>' +
+        '<td>'+cell(labelOf(PILLOWS,p.pillow))+'</td>' +
+        '<td>'+cell(drinks)+'</td>' +
+        '<td>'+cell(p.nama)+'</td>' +
+        '<td>'+(complete(g.id)?'<span class="chip chip-done">Set</span>':'<span class="chip chip-todo">Waiting</span>')+'</td></tr>';
+    }).join("");
+  }
+
+  /* ── To-Do tab ──────────────────────────────── */
+  function renderTasks(){
+    var ul = document.getElementById("taskList");
+    document.getElementById("taskForm").hidden = !me;
+    document.getElementById("taskLocked").hidden = !!me;
+    var all = data.todos.slice();
+    all.sort(function(a,b){ return (a.done?1:0) - (b.done?1:0); });
+    ul.innerHTML = all.length
+      ? all.map(function(t){ return taskHTML(t, true); }).join("")
+      : '<li class="empty">Nothing on the list yet.</li>';
+  }
+
+  /* ── Dates ──────────────────────────────────── */
+  function renderDates(){
+    var s = daysUntil(SAIL);
+    document.getElementById("sailCount").textContent =
+      s > 1 ? s + " days from today" : s === 1 ? "Tomorrow" : s === 0 ? "Today" : "Already sailed";
+
+    var list = DEADLINES.slice().sort(function(a,b){ return a.date - b.date; });
+    document.getElementById("deadlineList").innerHTML = list.map(function(dl){
+      var away = daysUntil(dl.date);
+      var count = away > 1 ? away + " days from today"
+                : away === 1 ? "Tomorrow" : away === 0 ? "Today" : "Already passed";
+      return '<div class="dl'+(away<=14&&away>=0?" soon":"")+'">' +
+        '<div class="dl-top"><span class="dl-date">'+esc(dl.label)+'</span>' +
+        '<span class="dl-count">'+esc(count)+'</span>' +
+        '<span class="dl-rule">'+esc(dl.rule)+'</span></div>' +
+        '<div class="dl-what">'+esc(dl.what)+'</div>' +
+        '<div class="dl-body">'+dl.body+'</div></div>';
+    }).join("");
+  }
+
+  /* ── Dinners ────────────────────────────────── */
+  function renderDinners(){
+    document.getElementById("dinnerBody").innerHTML = NIGHTS.map(function(n){
+      var tag = "";
+      if(n.tag === "New Year's Eve") tag = '<span class="chip chip-nye">New Year’s Eve</span>';
+      else if(n.tag) tag = '<span class="chip chip-todo">'+esc(n.tag)+'</span>';
+      return '<tr><td><span class="night-date">'+esc(n.date)+'</span>' +
+        '<span class="night-dow">'+esc(n.dow)+'</span></td>' +
+        '<td><span class="rest">'+esc(n.rest)+'</span></td>' +
+        '<td class="cuisine">'+esc(n.cuisine)+'</td><td>'+tag+'</td></tr>';
+    }).join("");
+  }
+
+  function renderRequests(){
+    var ul = document.getElementById("requestList");
+    document.getElementById("requestForm").hidden = !me;
+    document.getElementById("requestLocked").hidden = !!me;
+    ul.innerHTML = data.requests.length ? data.requests.map(function(r){
+      return '<li class="item"><span class="item-main"><b>'+esc(r.night)+' → '+esc(r.changeTo)+'</b>' +
+        '<span class="item-sub">Asked by '+esc(nameOf(r.person))+'</span>' +
+        (r.note?'<span class="item-note">'+esc(r.note)+'</span>':'') + '</span>' +
+        (r.person===me?'<button type="button" class="del" data-delreq="'+esc(r.id)+'" aria-label="Withdraw">&times;</button>':'') +
+        '</li>';
+    }).join("") : '<li class="empty">No change requests yet.</li>';
+  }
+
+  /* ── Schedule ───────────────────────────────── */
+  function renderSchedule(){
+    document.getElementById("daysList").innerHTML = DAYS.map(function(d){
+      var plans = data.bookings.filter(function(b){ return Number(b.day) === d.n; });
+      plans.sort(function(a,b){ return nameOf(a.person).localeCompare(nameOf(b.person)); });
+      var plansHTML = plans.length ? '<div class="day-plans">' + plans.map(function(b){
+        return '<div class="plan"><div class="plan-top">' +
+          '<span class="chip chip-who">'+esc(nameOf(b.person))+'</span>' +
+          '<span class="plan-t">'+esc(b.title)+'</span>' +
+          (b.time?'<span class="plan-time">'+esc(b.time)+'</span>':'') + '</div>' +
+          (b.notes?'<div class="plan-note">'+esc(b.notes)+'</div>':'') + '</div>';
+      }).join("") + '</div>' : '';
+      return '<div class="day '+d.kind+'"><div class="day-mark">' +
+        '<span class="day-n">Day '+d.n+'</span><span class="day-d">'+esc(d.d)+'</span></div>' +
+        '<div class="day-body"><div class="day-place">'+esc(d.place)+'</div>' +
+        (d.times?'<div class="day-times">'+esc(d.times)+'</div>':'') +
+        (d.dine?'<div class="day-dine">Dinner 6:30 · <b>'+esc(d.dine)+'</b></div>':'') +
+        plansHTML + '</div></div>';
+    }).join("");
+  }
+
+  function renderAll(){
+    renderHeader(); renderTabs(); renderYou(); renderBoard();
+    renderTasks(); renderDates(); renderDinners(); renderRequests(); renderSchedule();
+  }
+
+  /* ── Populate selects ───────────────────────── */
+  var dayOpts = DAYS.map(function(d){
+    return '<option value="'+d.n+'">Day '+d.n+' · '+esc(d.d)+' · '+esc(d.place)+'</option>';
+  }).join("");
+  document.getElementById("bk-day").innerHTML = dayOpts;
+  document.getElementById("rq-night").innerHTML = NIGHTS.map(function(n){
+    return '<option value="'+esc(n.date+" — "+n.rest)+'">'+esc(n.date+" — "+n.rest)+'</option>';
+  }).join("");
+  document.getElementById("rq-want").innerHTML = ALTERNATES.map(function(a){
+    return '<option value="'+esc(a)+'">'+esc(a)+'</option>';
+  }).join("");
+  document.getElementById("td-who").innerHTML =
+    '<option value="">Everyone</option>' +
+    GUESTS.map(function(g){ return '<option value="'+g.id+'">'+esc(g.name)+'</option>'; }).join("");
+
+  /* ── Events ─────────────────────────────────── */
+  document.getElementById("whoRow").addEventListener("click", function(e){
+    var b = e.target.closest(".who-btn"); if(!b) return;
+    me = b.getAttribute("data-id");
+    try { localStorage.setItem("cruise-who", me); } catch(err){}
+    var st = document.getElementById("saveStatus"); st.textContent = ""; st.className = "status";
+    if(tab !== "you") setTab("you", false);
+    renderAll();
+  });
+
+  document.getElementById("tabbar").addEventListener("click", function(e){
+    var b = e.target.closest(".tab"); if(!b) return;
+    setTab(b.getAttribute("data-tab"), true);
+  });
+
+  document.getElementById("opt-drinks").addEventListener("change", function(){
+    var picked = readDrinks(), boxes = document.querySelectorAll("#opt-drinks input");
+    for(var i=0;i<boxes.length;i++){
+      boxes[i].disabled = !me || (picked.length >= DRINK_MAX && picked.indexOf(boxes[i].value) === -1);
+    }
+    updateDrinkCap();
+  });
+
+  document.getElementById("saveBtn").addEventListener("click", function(){
+    if(!me) return;
+    var pill = document.querySelector("#opt-pillow input:checked");
+    var nama = document.querySelector("#opt-nama input:checked");
+    send({op:"setPicks", person:me, pillow:pill?pill.value:"",
+          drinks:readDrinks(), nama:nama?nama.value:""},
+         document.getElementById("saveStatus"), "Saved.");
+  });
+
+  document.getElementById("bookForm").addEventListener("submit", function(e){
+    e.preventDefault(); if(!me) return;
+    var st = document.getElementById("bookStatus");
+    var title = document.getElementById("bk-title").value.trim();
+    if(!title){ st.textContent = "Give it a name first."; st.className = "status warn"; return; }
+    send({op:"addBooking", id:uid("b"), person:me, title:title,
+          day:Number(document.getElementById("bk-day").value),
+          time:document.getElementById("bk-time").value.trim(),
+          notes:document.getElementById("bk-notes").value.trim()}, st, "Added.")
+      .then(function(ok){
+        if(ok){
+          document.getElementById("bk-title").value = "";
+          document.getElementById("bk-time").value = "";
+          document.getElementById("bk-notes").value = "";
+        }
+      });
+  });
+
+  document.getElementById("requestForm").addEventListener("submit", function(e){
+    e.preventDefault(); if(!me) return;
+    var st = document.getElementById("requestStatus");
+    send({op:"addRequest", id:uid("r"), person:me,
+          night:document.getElementById("rq-night").value,
+          changeTo:document.getElementById("rq-want").value,
+          note:document.getElementById("rq-note").value.trim()},
+         st, "Sent — Claire will take it from here.")
+      .then(function(ok){ if(ok) document.getElementById("rq-note").value = ""; });
+  });
+
+  document.getElementById("taskForm").addEventListener("submit", function(e){
+    e.preventDefault(); if(!me) return;
+    var st = document.getElementById("taskStatus");
+    var task = document.getElementById("td-task").value.trim();
+    if(!task){ st.textContent = "Type the task first."; st.className = "status warn"; return; }
+    send({op:"addTodo", id:uid("t"), task:task,
+          assignee:document.getElementById("td-who").value,
+          due:document.getElementById("td-due").value.trim(), addedBy:me}, st, "Added.")
+      .then(function(ok){
+        if(ok){
+          document.getElementById("td-task").value = "";
+          document.getElementById("td-due").value = "";
+        }
+      });
+  });
+
+  document.body.addEventListener("click", function(e){
+    var t = e.target;
+    var b;
+    if((b = t.closest("[data-delbook]")))
+      send({op:"delBooking", id:b.getAttribute("data-delbook")}, document.getElementById("bookStatus"), "Removed.");
+    else if((b = t.closest("[data-delreq]")))
+      send({op:"delRequest", id:b.getAttribute("data-delreq")}, document.getElementById("requestStatus"), "Withdrawn.");
+    else if((b = t.closest("[data-deltodo]")))
+      send({op:"delTodo", id:b.getAttribute("data-deltodo")}, document.getElementById("taskStatus"), "Deleted.");
+  });
+
+  document.body.addEventListener("change", function(e){
+    var c = e.target.closest("[data-todo]");
+    if(!c) return;
+    send({op:"toggleTodo", id:c.getAttribute("data-todo"), done:c.checked},
+         document.getElementById("taskStatus"), c.checked ? "Checked off." : "Reopened.");
+  });
+
+  document.getElementById("refreshBtn").addEventListener("click", function(){ load(); });
+  document.addEventListener("visibilitychange", function(){
+    if(document.visibilityState === "visible" && API_URL) load();
+  });
+
+  /* ── Boot ───────────────────────────────────── */
+  renderAll();
+  load();
+})();
+</script>
+</body>
+</html>
